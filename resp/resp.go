@@ -61,6 +61,7 @@ func Write(w io.Writer, v interface{}) (n int, err error) {
 	case []interface{}:
 		ew.Write(star)
 		ew.Write([]byte(strconv.Itoa(len(x))))
+		ew.Write(clrf)
 		for _, item := range x {
 			Write(ew, item)
 		}
